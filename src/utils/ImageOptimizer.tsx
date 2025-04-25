@@ -1,0 +1,14 @@
+/**
+ * أداة مساعدة بسيطة للصور
+ */
+
+/**
+ * إنشاء placeholder للصورة
+ * @param width عرض الصورة البديلة
+ * @param height ارتفاع الصورة البديلة
+ * @param color لون الخلفية (كود hex)
+ * @returns صورة بديلة كـ data URL
+ */
+export const createSimplePlaceholder = (width: number, height: number, color: string = '#f3f4f6'): string => {
+  return `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 ${width} ${height}' width='${width}' height='${height}'%3E%3Crect width='${width}' height='${height}' fill='${color.replace('#', '%23')}'/%3E%3C/svg%3E`;
+};
