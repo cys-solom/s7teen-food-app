@@ -1,128 +1,116 @@
-# Zukka Marketplace
+# S7teen Food App
 
-A modern Arabic e-commerce marketplace built with React, TypeScript, and Firebase.
+تطبيق عربي حديث لبيع المنتجات الغذائية مبني باستخدام React وTypeScript.
 
-## 📋 Overview
+## 📋 نظرة عامة
 
-Zukka Marketplace is a feature-rich e-commerce platform designed for Arabic markets. The application provides a seamless shopping experience with features like product browsing, cart management, user authentication, and more.
+تطبيق S7teen Food هو منصة متكاملة لتسوق المنتجات الغذائية مصممة للأسواق العربية. يوفر التطبيق تجربة تسوق سلسة مع ميزات مثل تصفح المنتجات وإدارة سلة المشتريات والبحث السريع والمزيد.
 
-## ✨ Features
+## ✨ الميزات
 
-- **Responsive Design**: Mobile-first approach for optimal user experience across devices
-- **Product Catalog**: Browse products by categories
-- **Shopping Cart**: Add/remove items, update quantities, and checkout
-- **User Authentication**: Account creation and management through Firebase
-- **Search Functionality**: Find products quickly and efficiently
-- **Performance Optimized**: Lazy loading images and components for better UX
+- **تصميم متجاوب**: نهج يناسب الهواتف المحمولة أولاً لتجربة مستخدم مثالية عبر الأجهزة
+- **تصنيفات المنتجات**: تصفح المنتجات حسب الفئات
+- **سلة التسوق**: إضافة/إزالة العناصر، تحديث الكميات، وإتمام الشراء
+- **خدمة التوصيل**: معلومات عن خدمات التوصيل والنطاق الجغرافي
+- **وظيفة البحث**: العثور على المنتجات بسرعة وكفاءة
+- **أداء محسن**: تحميل كسول للصور والمكونات لتجربة مستخدم أفضل
 
-## 🛠️ Tech Stack
+## 🛠️ التقنيات المستخدمة
 
-- **Frontend Framework**: React 18 with TypeScript
-- **Build Tool**: Vite
-- **Styling**: Tailwind CSS
-- **Animations**: Framer Motion
-- **Routing**: React Router Dom
-- **Backend/Database**: Firebase
-- **Icons**: Lucide React
+- **إطار الواجهة الأمامية**: React 18 مع TypeScript
+- **أداة البناء**: Vite
+- **التصميم**: Tailwind CSS
+- **الحركات والانتقالات**: Framer Motion
+- **التنقل**: React Router Dom
+- **الأيقونات**: Lucide React
 
-## 🚀 Getting Started
+## 🚀 البدء
 
-### Prerequisites
+### المتطلبات الأساسية
 
-- Node.js (v16 or higher)
-- npm or yarn
+- Node.js (الإصدار 16 أو أعلى)
+- npm أو yarn
 
-### Installation
+### التثبيت
 
-1. Clone the repository
+1. استنساخ المستودع
 ```bash
-git clone https://github.com/your-username/zukka-marketplace.git
-cd zukka-marketplace
+git clone https://github.com/username/s7teen-food-app.git
+cd s7teen-food-app
 ```
 
-2. Install dependencies
+2. تثبيت التبعيات
 ```bash
 npm install
-# or
+# أو
 yarn
 ```
 
-3. Set up environment variables
-Create a `.env` file in the root directory with your Firebase configuration:
-```
-VITE_FIREBASE_API_KEY=your_api_key
-VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
-VITE_FIREBASE_PROJECT_ID=your_project_id
-VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
-VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
-VITE_FIREBASE_APP_ID=your_app_id
-```
+### التطوير
 
-### Development
-
-Start the development server:
+بدء خادم التطوير:
 ```bash
 npm run dev
-# or
+# أو
 yarn dev
 ```
 
-The application will be available at `http://localhost:5173`.
+سيكون التطبيق متاحًا على `http://localhost:5173`.
 
-### Building for Production
+### البناء للإنتاج
 
 ```bash
 npm run build
-# or
+# أو
 yarn build
 ```
 
-Preview the production build:
+معاينة نسخة الإنتاج:
 ```bash
 npm run preview
-# or
+# أو
 yarn preview
 ```
 
-## 📁 Project Structure
+## 📁 هيكل المشروع
 
 ```
 src/
-  ├── components/       # Reusable UI components
-  │   ├── cart/         # Cart-related components
-  │   ├── home/         # Homepage sections
-  │   ├── layout/       # Layout components (Header, Footer, etc.)
-  │   ├── products/     # Product-related components
-  │   └── ui/           # Generic UI components
-  ├── context/          # React Context providers
-  ├── data/             # Data and API interfaces
-  ├── pages/            # Application pages/routes
-  ├── types/            # TypeScript type definitions
-  ├── utils/            # Utility functions and helpers
-  ├── App.tsx           # Main application component
-  └── main.tsx          # Application entry point
+  ├── components/       # مكونات واجهة المستخدم القابلة لإعادة الاستخدام
+  │   ├── cart/         # مكونات متعلقة بسلة التسوق
+  │   ├── home/         # أقسام الصفحة الرئيسية
+  │   ├── layout/       # مكونات التخطيط (الرأس، التذييل، إلخ)
+  │   ├── products/     # مكونات متعلقة بالمنتجات
+  │   └── ui/           # مكونات واجهة المستخدم العامة
+  ├── context/          # موفرو سياق React
+  ├── data/             # البيانات وواجهات API
+  ├── pages/            # صفحات/مسارات التطبيق
+  ├── types/            # تعريفات أنواع TypeScript
+  ├── utils/            # وظائف المساعدة والأدوات المساعدة
+  ├── App.tsx           # مكون التطبيق الرئيسي
+  └── main.tsx          # نقطة دخول التطبيق
 ```
 
-## 🧪 Linting and Type Checking
+## 🧪 التنقيح والتحقق من النوع
 
 ```bash
 npm run lint
-# or
+# أو
 yarn lint
 ```
 
-## 📱 Deployment
+## 📱 النشر
 
-The project is configured for deployment on Vercel. Push to the main branch to trigger automatic deployments.
+تم تكوين المشروع للنشر على Vercel. الدفع إلى الفرع الرئيسي يؤدي إلى تشغيل عمليات النشر التلقائية.
 
-## 🤝 Contributing
+## 🤝 المساهمة
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+1. انشئ نسخة من المستودع (Fork)
+2. إنشاء فرع للميزة (`git checkout -b feature/amazing-feature`)
+3. قم بإجراء تغييراتك (`git commit -m 'إضافة بعض الميزات الرائعة'`)
+4. ادفع إلى الفرع (`git push origin feature/amazing-feature`)
+5. افتح طلب سحب (Pull Request)
 
-## 📄 License
+## 📄 الترخيص
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+هذا المشروع مرخص بموجب ترخيص MIT - راجع ملف LICENSE للحصول على التفاصيل.
