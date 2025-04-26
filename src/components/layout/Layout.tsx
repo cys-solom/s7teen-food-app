@@ -61,17 +61,17 @@ const Layout: React.FC = () => {
   };
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen overflow-x-hidden">
       {/* إضافة مكون محسن الأداء */}
       <PerformanceOptimizer />
       
       <Header toggleCart={toggleCart} />
-      <main className="container mx-auto px-2 xs:px-4 py-4 md:py-8 min-h-[calc(100vh-150px)] overflow-x-hidden">
+      <main className="flex-grow container mx-auto px-3 py-3 sm:px-4 sm:py-6 md:py-8 overflow-x-hidden">
         <Outlet />
       </main>
       <Footer />
       <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
-    </>
+    </div>
   );
 };
 

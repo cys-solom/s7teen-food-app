@@ -35,12 +35,13 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
 
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
-      <div className="container mx-auto px-2 xs:px-4">
-        <div className="flex items-center justify-between h-16">
-          {/* إعادة تصميم الشعار بحيث يكون أصغر على شاشة الموبايل */}
-          <Link to="/" className="flex flex-col items-start">
-            <span className="text-xl xs:text-2xl font-bold text-primary font-cairo">صحتين</span>
-            <span className="text-[10px] xs:text-xs font-semibold text-gray-500 mt-0.5 xs:mt-1">Fast & Tasty</span>
+      <div className="container mx-auto px-3 xs:px-4">
+        {/* تحسين ارتفاع الهيدر للشاشات الصغيرة */}
+        <div className="flex items-center justify-between h-14 md:h-16">
+          {/* تعديل مظهر الشعار لتحسين العرض على الموبايل */}
+          <Link to="/" className="flex items-center">
+            <span className="text-lg xs:text-xl sm:text-2xl font-bold text-primary font-cairo">صحتين</span>
+            <span className="text-[9px] xs:text-xs font-semibold text-gray-500 mt-0.5 mr-1">Fast & Tasty</span>
           </Link>
 
           {/* حقل البحث - مخفي على الموبايل */}
@@ -57,14 +58,13 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
                 type="submit"
                 className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-primary"
               >
-                <Search size={20} />
+                <Search size={18} />
               </button>
             </form>
           </div>
 
           {/* أزرار - ظاهرة فقط على الشاشات الكبيرة */}
           <div className="hidden md:flex items-center gap-4 lg:gap-6">
-            {/* زر السلة */}
             <button
               className="bg-secondary text-white py-2 px-4 rounded-full text-sm flex items-center gap-2 relative hover:bg-opacity-90 transition-all"
               onClick={toggleCart}
@@ -79,24 +79,24 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
             </button>
           </div>
 
-          {/* زر السلة المختصر للموبايل */}
-          <div className="md:hidden flex items-center gap-2">
+          {/* تحسين أزرار الموبايل وتباعدها */}
+          <div className="md:hidden flex items-center gap-3">
             <button
-              className="relative rounded-full p-2 text-primary border border-gray-200"
+              className="relative rounded-full p-1.5 text-primary bg-gray-50 border border-gray-200"
               onClick={toggleCart}
             >
-              <ShoppingCart size={20} />
+              <ShoppingCart size={18} />
               {totalItems > 0 && (
-                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
                   {totalItems}
                 </span>
               )}
             </button>
             <button
-              className="text-gray-600 hover:text-primary p-2"
+              className="text-gray-600 hover:text-primary p-1.5 bg-gray-50 rounded-full"
               onClick={toggleMenu}
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={18} /> : <Menu size={18} />}
             </button>
           </div>
         </div>
@@ -118,15 +118,16 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
         </nav>
       </div>
 
-      {/* القائمة المنسدلة على الشاشات الصغيرة */}
+      {/* تحسين القائمة المنسدلة على الشاشات الصغيرة */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200 py-4 shadow-md">
-          <div className="container px-4 mx-auto">
-            <form onSubmit={handleSearch} className="relative mb-4">
+        <div className="md:hidden bg-white border-t border-gray-100 py-3 shadow-md animate-fadeIn">
+          <div className="container px-3 mx-auto">
+            {/* تحسين مظهر حقل البحث */}
+            <form onSubmit={handleSearch} className="relative mb-3">
               <input
                 type="text"
                 placeholder="ابحث عن الأطباق..."
-                className="w-full py-2 px-4 pr-10 rounded-full border border-gray-300 focus:outline-none focus:border-primary text-sm"
+                className="w-full py-2 px-3 pr-9 rounded-lg border border-gray-200 focus:outline-none focus:border-primary text-sm"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
@@ -134,13 +135,13 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
                 type="submit"
                 className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-primary"
               >
-                <Search size={20} />
+                <Search size={16} />
               </button>
             </form>
 
-            <div className="mb-4">
-              <h3 className="font-semibold text-lg mb-2">القائمة</h3>
-              <ul className="grid grid-cols-2 gap-y-2">
+            <div className="mb-3">
+              <h3 className="font-bold text-gray-800 text-sm mb-2">القائمة</h3>
+              <ul className="grid grid-cols-2 gap-y-1">
                 {categories.map((category) => (
                   <li key={category.id}>
                     <Link 
@@ -155,17 +156,17 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
               </ul>
             </div>
 
-            <div className="space-y-2">
-              <button
-                onClick={() => {
-                  handleCallUs();
-                  setIsMenuOpen(false);
-                }}
-                className="bg-primary text-white py-2 px-4 rounded-full text-sm w-full hover:bg-opacity-90 transition-all"
-              >
-                <span>اطلب عبر واتساب</span>
-              </button>
-            </div>
+            {/* تحسين زر واتساب */}
+            <button
+              onClick={() => {
+                handleCallUs();
+                setIsMenuOpen(false);
+              }}
+              className="bg-[#25D366] text-white py-1.5 px-4 rounded-lg text-sm w-full hover:bg-opacity-90 transition-all flex items-center justify-center gap-2"
+            >
+              <Phone size={14} />
+              <span>اطلب عبر واتساب</span>
+            </button>
           </div>
         </div>
       )}
