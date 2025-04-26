@@ -22,12 +22,22 @@ export default {
       animation: {
         'bounce-slow': 'bounce 3s infinite',
       },
+      screens: {
+        'xs': '475px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+      },
     },
     container: {
       center: true,
       padding: {
         DEFAULT: '1rem',
+        xs: '1.5rem',
         sm: '2rem',
+        md: '2rem',
         lg: '4rem',
         xl: '5rem',
       },

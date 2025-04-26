@@ -66,7 +66,7 @@ const Layout: React.FC = () => {
       <PerformanceOptimizer />
       
       <Header toggleCart={toggleCart} />
-      <main className="container mx-auto px-4 py-8 min-h-[60vh]">
+      <main className="container mx-auto px-2 xs:px-4 py-4 md:py-8 min-h-[calc(100vh-150px)] overflow-x-hidden">
         <Outlet />
       </main>
       <Footer />
