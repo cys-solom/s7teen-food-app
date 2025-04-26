@@ -7,4 +7,8 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  server: {
+    // Enable history API fallback to handle client-side routing
+    historyApiFallback: true,
+  },
 });
